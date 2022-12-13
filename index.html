@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Sketch Pad</title>
+</head>
+<body>
+    <script src="script.js" defer></script>
+    <header>
+        <h1>Sketch Pad</h1>
+        <p>What will you create?</p>
+    </header>
+    <main>
+        <div class="sidebar">
+            <div class="size-selection">
+                <p>Select canvas size:</p>
+                <button class="size-selector" id="8">8x8</button>
+                <button class="size-selector" id="16">16x16</button>
+                <button class="size-selector" id="32">32x32</button>
+            </div>
+            <div class="view-options">
+                <label for="gridline-toggle">View gridlines?</label>
+                <input checked type="checkbox" class="gridline-toggle" name="gridline-toggle">
+            </div>
+        </div>
+        <div class="container"></div>
+    </main>
+</body>
+</html>

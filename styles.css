@@ -1,0 +1,33 @@
+:root {
+    --gridSize: 16;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightslategray;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template: repeat(var(--gridSize), 1fr) / repeat(var(--gridSize), 1fr);
+    padding: 0;
+    margin: 10px auto;
+    height: 600px;
+    width: 600px;
+    gap: 0;
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+.grid-square {
+    border: 1px solid lightgrey;
+}
+
+.no-gridlines {
+    border: none;
+}
