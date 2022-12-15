@@ -43,6 +43,23 @@ function toggleGridlines (cells) {
     });
 }
 
+colorButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        changeColorMode(button.id);
+    })
+});
+
+function changeColorMode(input) {
+    colorMode = input;
+}
+
+function getRandomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 function colorMouseDown (cells, color) {
     let isMouseDown = false;
     cells.forEach(cell => {
@@ -54,7 +71,17 @@ function colorMouseDown (cells, color) {
         });
         cell.addEventListener("mousemove", (event) => {
             if (isMouseDown) {
-                cell.style.backgroundColor = color.value;
+                switch (colorMode) {
+                    case "single-color":
+                        cell.style.backgroundColor = color.value;
+                        break;
+                    case "rainbow-mode":
+                        cell.style.backgroundColor = getRandomColor();
+                        break;
+                    case "eraser":
+                        cell.style.backgroundColor = container.style.backgroundColor;
+                        break;
+                };
             }
         });
     });
