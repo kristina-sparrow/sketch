@@ -1,10 +1,11 @@
-let buttons = document.querySelectorAll("button");
+let sizeButtons = document.querySelectorAll(".size-selector");
+let colorButtons = document.querySelectorAll(".color-mode");
 let container = document.querySelector(".container");
 let cells = document.querySelectorAll(".cell");
 let color = document.querySelector("#colorpicker");
 let gridToggleBtn = document.querySelector(".gridline-toggle");
 
-buttons.forEach(button => {
+sizeButtons.forEach(button => {
     button.addEventListener("click", () => {
         createGrid(button.id);
     })
