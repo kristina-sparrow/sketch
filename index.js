@@ -1,53 +1,38 @@
+// Declarations
 const sizeButtons = document.querySelectorAll(".btn-size");
 const colorButtons = document.querySelectorAll(".btn-color");
-const container = document.querySelector(".grid-container");
-const color = document.querySelector("#colorpicker");
+const gridContainer = document.querySelector(".grid-container");
 const gridToggleBtn = document.querySelector(".gridline-toggle");
-let cells = document.querySelectorAll(".cell");
+const cells = document.querySelectorAll(".cell");
+const color = document.querySelector("#colorpicker");
+let colorMode = "single-color";
 
-sizeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    createGrid(button.id);
-  });
-});
-
+// Functions
 function createGrid(size) {
   resetGrid();
   document.documentElement.style.setProperty("--gridSize", size);
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-      let div = document.createElement("div");
-      div.classList.add("cell");
-      container.appendChild(div);
-    }
-  }
+  const cellArray = Array.from({ length: size ** 2 }).fill(null);
+  cellArray.forEach(() => {
+    const div = document.createElement("div");
+    div.classList.add("cell");
+    gridContainer.appendChild(div);
+  });
   let currentCells = document.querySelectorAll(".cell");
   let currentColor = document.querySelector("#colorpicker");
   colorMouseDown(currentCells, currentColor);
 }
 
 function resetGrid() {
-  container.querySelectorAll("*").forEach(function (child) {
+  gridContainer.querySelectorAll("*").forEach((child) => {
     child.remove();
   });
 }
-
-gridToggleBtn.addEventListener("change", () => {
-  let currentCells = document.querySelectorAll(".cell");
-  toggleGridlines(currentCells);
-});
 
 function toggleGridlines(cells) {
   cells.forEach((cell) => {
     cell.classList.toggle("no-gridlines");
   });
 }
-
-colorButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    changeColorMode(button.id);
-  });
-});
 
 function changeColorMode(input) {
   colorMode = input;
@@ -69,7 +54,7 @@ function colorMouseDown(cells, color) {
     cell.addEventListener("mouseup", () => {
       isMouseDown = false;
     });
-    cell.addEventListener("mousemove", (event) => {
+    cell.addEventListener("mousemove", () => {
       if (isMouseDown) {
         switch (colorMode) {
           case "single-color":
@@ -79,7 +64,7 @@ function colorMouseDown(cells, color) {
             cell.style.backgroundColor = getRandomColor();
             break;
           case "eraser":
-            cell.style.backgroundColor = container.style.backgroundColor;
+            cell.style.backgroundColor = gridContainer.style.backgroundColor;
             break;
         }
       }
@@ -87,4 +72,23 @@ function colorMouseDown(cells, color) {
   });
 }
 
+// Event Listeners
+sizeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    createGrid(button.id);
+  });
+});
+
+colorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeColorMode(button.id);
+  });
+});
+
+gridToggleBtn.addEventListener("change", () => {
+  let currentCells = document.querySelectorAll(".cell");
+  toggleGridlines(currentCells);
+});
+
+// Init
 createGrid(16);
