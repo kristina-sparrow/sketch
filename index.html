@@ -14,32 +14,36 @@
   </head>
   <body>
     <script src="index.js" defer></script>
-    <header>
+    <header class="header">
       <h1>Retro Sketch</h1>
       <p>What will you create?</p>
     </header>
-    <main>
+    <main class="main">
       <div class="sidebar">
         <div class="color-wheel">
-          <input type="color" id="colorpicker" value="#0000ff" />
+          <input type="color" id="colorpicker" value="#00ff88" />
         </div>
-        <div class="color-options">
+        <div class="option-container--color">
           <p>Select color mode:</p>
-          <div class="buttons">
-            <button class="color-mode" id="single-color">Single Color</button>
-            <button class="color-mode" id="rainbow-mode">Rainbow Mode</button>
-            <button class="color-mode" id="eraser">Eraser</button>
+          <div class="btn-container--color">
+            <button class="btn btn-color" id="single-color">
+              Single Color
+            </button>
+            <button class="btn btn-color" id="rainbow-mode">
+              Rainbow Mode
+            </button>
+            <button class="btn btn-color" id="eraser">Eraser</button>
           </div>
         </div>
-        <div class="size-options">
+        <div class="option-container--size">
           <p>Select canvas size:</p>
-          <div class="buttons">
-            <button class="size-selector" id="8">8x8</button>
-            <button class="size-selector" id="16">16x16</button>
-            <button class="size-selector" id="32">32x32</button>
+          <div class="btn-container--size">
+            <button class="btn btn-size" id="8">8x8</button>
+            <button class="btn btn-size" id="16">16x16</button>
+            <button class="btn btn-size" id="32">32x32</button>
           </div>
         </div>
-        <div class="view-options">
+        <div class="option-container--view">
           <label for="gridline-toggle">View gridlines?</label>
           <input
             checked
@@ -49,14 +53,14 @@
           />
         </div>
       </div>
-      <div class="container"></div>
+      <div class="grid-container"></div>
     </main>
-    <footer>
+    <footer class="footer">
       <p>Built by Kristina Sparrow</p>
       <a
         href="https://github.com/kristina-sparrow"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         <i class="fa-brands fa-github"></i>
       </a>

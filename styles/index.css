@@ -1,7 +1,21 @@
-html {
+/* VARIABLES & FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+/* BASE RULES */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* STYLES */
 body {
   height: 100vh;
   width: auto;
@@ -10,65 +24,51 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
   color: whitesmoke;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 30px;
 }
 
-main {
+/* HEADER */
+.header h1 {
+  font-family: "Bungee", "Montserrat", sans-serif;
+  font-size: 3rem;
+}
+.header p {
+  padding-top: 30px;
+  font-size: 1.2rem;
+}
+
+/* MAIN */
+.main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
 }
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  gap: 10px;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.container {
-  display: grid;
-  grid-template: repeat(16, 1fr)/repeat(16, 1fr);
-  padding: 0;
-  margin: 10px 0px;
+.main .sidebar {
+  background-color: rgb(41, 43, 55);
+  color: rgb(210, 209, 209);
   height: 600px;
-  width: 600px;
-  gap: 0;
-  background-color: whitesmoke;
-  border: 1px solid lightgray;
+  padding: 30px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  box-shadow: 0 -2px 0 hsla(0deg, 0%, 100%, 0.15), inset 0 2px 2px hsla(0deg, 0%, 0%, 0.1);
 }
-
-.cell {
-  border: 0.5px dotted lightgray;
-}
-
-.no-gridlines {
-  border: none;
-}
-
-.color-wheel {
+.main .sidebar .color-wheel {
   width: 100px;
   height: 100px;
   overflow: hidden;
   border-radius: 100%;
 }
-
-#colorpicker {
+.main .sidebar .color-wheel #colorpicker {
   width: 100%;
   height: 100%;
   border: none;
@@ -76,30 +76,52 @@ main {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1019607843);
   transform: scale(1.2);
 }
-
-button {
-  padding: 10px 25px;
-  margin: 0px;
-  border: 0.5px solid lightgray;
-  border-radius: 5%;
+.main .sidebar .option-container--color,
+.main .sidebar .option-container--size {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main .sidebar .btn-container--color,
+.main .sidebar .btn-container--size {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main .sidebar .btn {
+  background-color: rgb(70, 79, 88);
+  color: rgb(210, 209, 209);
+  padding: 10px 0px;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 hsl(224deg, 84%, 74%), inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+}
+.main .grid-container {
+  display: grid;
+  grid-template: repeat(16, 1fr)/repeat(16, 1fr);
+  padding: 0;
+  margin: 10px 0px;
+  height: 600px;
+  width: 600px;
+  background-color: whitesmoke;
+  border: 1px solid rgb(210, 209, 209);
+  box-shadow: inset 0 1px 0 hsl(224deg, 84%, 74%), inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+}
+.main .grid-container .cell {
+  border: 0.5px dotted rgb(190, 189, 189);
+}
+.main .grid-container .no-gridlines {
+  border: none;
 }
 
-.view-options {
-  margin-top: 20px;
-}
-
-footer {
+/* FOOTER */
+.footer {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  height: 30px;
-  padding-bottom: 20px;
-  position: absolute;
-  top: calc(100vh - 50px);
+  font-size: 1.2rem;
   color: whitesmoke;
-  font-size: 0.9rem;
 }
-footer i {
+.footer i {
   color: whitesmoke;
 }/*# sourceMappingURL=index.css.map */
