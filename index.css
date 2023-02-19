@@ -1,6 +1,5 @@
 /* VARIABLES & FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Press+Start+2P&display=swap");
 
 :root {
   --gridSize: 16;
@@ -21,7 +20,8 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.8rem;
 }
 
 /* STYLES */
@@ -44,8 +44,8 @@ body {
 
 /* HEADER */
 .header h1 {
-  font-family: "Bungee", "Montserrat", sans-serif;
-  font-size: 3rem;
+  font-family: "Bungee Shade", "Press Start 2P", sans-serif;
+  font-size: 4rem;
 }
 
 .header p {
@@ -64,21 +64,22 @@ body {
 .sidebar {
   background-color: var(--clr-dark);
   color: var(--clr-grayL);
+  font-size: 0.8rem;
   height: 600px;
-  padding: 30px;
+  padding: 25px;
   width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   box-shadow: 0 -2px 0 hsla(0, 0%, 100%, 0.15),
     inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
 }
 
 .color-wheel {
-  width: 100px;
-  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
   overflow: hidden;
   border-radius: 100%;
 }
@@ -98,15 +99,21 @@ body {
 .btn-container--size {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+}
+
+.btn-container--color,
+.btn-container--size {
+  gap: 8px;
 }
 
 .btn {
+  font-family: inherit;
+  font-size: 0.8rem;
   background-color: var(--clr-grayD);
   color: var(--clr-grayL);
-  padding: 10px 0px;
-  border-radius: 6px;
-  box-shadow: inset 0 1px 0 hsl(224, 84%, 74%),
+  padding: 10px 10px;
+  box-shadow: inset 0 1px 0 hsl(223, 8%, 44%),
     inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 
@@ -114,7 +121,6 @@ body {
 .grid-container {
   display: grid;
   grid-template: repeat(var(--gridSize), 1fr) / repeat(var(--gridSize), 1fr);
-  margin: 10px 0px;
   height: 600px;
   width: 600px;
   background-color: var(--clr-light);
@@ -136,11 +142,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
   font-size: 1.2rem;
   color: var(--clr-light);
 }
 
 footer i {
   color: var(--clr-light);
+  font-size: 1.8rem;
 }
