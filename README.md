@@ -1,4 +1,4 @@
-# Etch-A-Sketch
+# Retro Sketch
 
 A simple Etch-A-Sketch game built with vanilla JavaScript and CSS.
 
