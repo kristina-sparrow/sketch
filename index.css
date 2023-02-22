@@ -21,7 +21,7 @@
 html {
   scroll-behavior: smooth;
   font-family: "Press Start 2P", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 /* STYLES */
@@ -65,21 +65,21 @@ body {
   background-color: var(--clr-dark);
   color: var(--clr-grayL);
   font-size: 0.8rem;
-  height: 600px;
-  padding: 25px;
+  height: 500px;
+  padding: 10px 20px;
   width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   box-shadow: 0 -2px 0 hsla(0, 0%, 100%, 0.15),
     inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
 }
 
 .color-wheel {
-  min-width: 100px;
-  min-height: 100px;
+  min-width: 80px;
+  min-height: 80px;
   overflow: hidden;
   border-radius: 100%;
 }
@@ -121,8 +121,8 @@ body {
 .grid-container {
   display: grid;
   grid-template: repeat(var(--gridSize), 1fr) / repeat(var(--gridSize), 1fr);
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 500px;
   background-color: var(--clr-light);
   border: 1px solid var(--clr-grayL);
   box-shadow: inset 0 1px 0 hsl(224, 84%, 74%),
@@ -143,11 +143,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--clr-light);
 }
 
 footer i {
   color: var(--clr-light);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
